@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: "https://auth-mern-app.netlify.app/profile", // Replace '*' with your frontend's origin or a specific domain
+    origin: "https://auth-mern-app.netlify.app", // Replace '*' with your frontend's origin or a specific domain
     methods: ["GET", "POST", "PUT", "DELETE"], // Specify the allowed HTTP methods
     credentials: true, // Enable credentials (e.g., cookies, authorization headers)
   })

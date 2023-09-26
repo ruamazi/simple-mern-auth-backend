@@ -12,7 +12,14 @@ const port = process.env.PORt || 3090;
 
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors());
+app.use(
+  cors({
+    origin: "*", // Replace '*' with your frontend's origin or a specific domain
+    methods: ["GET", "POST", "PUT", "DELETE"], // Specify the allowed HTTP methods
+    allowedHeaders: ["Content-Type", "Authorization"], // Specify the allowed headers
+    credentials: true, // Enable credentials (e.g., cookies, authorization headers)
+  })
+);
 
 mongoose
   .connect(process.env.MONGO_URI)
